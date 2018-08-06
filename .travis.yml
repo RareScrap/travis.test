@@ -11,11 +11,3 @@ cache:
   directories:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
-
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: ceadef6bbd41ffaf966050d964f08c3317833f09
-  keep-history: true
-  on:
-    branch: master
