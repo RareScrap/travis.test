@@ -12,8 +12,7 @@ script:
 - ls
 - cd libs
 - ls
-- echo $HOME
-- echo $HOME/travis
+- pwd
 cache:
   directories:
   - "$HOME/.gradle"
