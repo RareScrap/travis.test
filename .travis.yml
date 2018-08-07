@@ -13,18 +13,18 @@ script:
  - ./gradlew build
  - ./gradlew jar
 
-before_deploy:
-  - git config --local user.name "RareScrap"
-  - git config --local user.email "RareScrap@users.noreply.github.com"
-  - git tag "v0.0.1" #"$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+#before_deploy:
+#  - git config --local user.name "RareScrap"
+#  - git config --local user.email "RareScrap@users.noreply.github.com"
+#  - git tag "v0.0.1" #"$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
 
 deploy:
   provider: releases
   api_key: 518c97382dee98db13b059a4bcc20a88c8ecf551
   file: build/lib/travis.test-1.0-SNAPSHOT.jar
   skip_cleanup: true
-#  on:
-#    tags: true   
+  on:
+    tags: true
 #    all_branches: true
 #    repo: RareScrap/travis.test
 
