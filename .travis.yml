@@ -14,11 +14,12 @@ script:
  - ./gradlew jar
 
 before_deploy:
-  - export TRAVIS_TAG="1.0.$TRAVIS_BUILD_NUMBER"
-  - echo "$TRAVIS_TAG" "$TRAVIS_COMMIT"
   - git config --local user.name "$USER_NAME"
   - git config --local user.email "$USER_EMAIL"
-  - git tag "$TRAVIS_TAG" "$TRAVIS_COMMIT"
+  - export GIT_TAG=$TRAVIS_BRANCH-0.1.$TRAVIS_BUILD_NUMBER
+  - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
+  - git push -q https://$TAGPERM@github.com/RareScrap/travis.test --tags
+  - ls -R
 
 deploy:
   provider: releases
