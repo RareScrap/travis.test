@@ -23,3 +23,6 @@ deploy:
   file: build/libs/travis.test-1.0-SNAPSHOT.jar
   on:
     repo: RareScrap/travis.test
+    branches:    # ← new!
+          only:      # ← new!
+            - master # ← new!
