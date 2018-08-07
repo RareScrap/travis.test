@@ -2,13 +2,14 @@ language: java
 sudo: false # faster builds
 install: true
 
-install: gradle wrapper --gradle-version 4.2
+install: gradle wrapper --gradle-version 4.2 # чтобы не заталкивать враппе в репу
 
 jdk:
  - oraclejdk8
 
 script:
  - chmod +x gradlew
+ - ./gradlew test
  - ./gradlew build
 
 cache:
