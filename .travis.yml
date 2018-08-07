@@ -21,6 +21,7 @@ deploy:
   on:
     tags: true
     all_branches: true
+    repo: RareScrap/travis.test
 
 cache:
   directories:
