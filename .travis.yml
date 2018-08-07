@@ -12,6 +12,7 @@ script:
 - ls
 - cd libs
 - ls
+- echo $HOME
 cache:
   directories:
   - "$HOME/.gradle"
@@ -20,7 +21,7 @@ deploy:
   provider: releases
   api_key:
     secure: kxjODWC+2AAlQG323x7RjTosZXGHDSWE0A/+w35WMktphjJR83p5/hudlvbmBmv0D2Eoikn5iLymjWcQzgrkWLmULq7EVCu0IKD9QJnrmgiquKzPAYtXnfknt0zpdf1J+MOQ30loqFyCpf10Sp6Z4zY9j3/6Xtsr1HFq/CVxZnpCY2JT4k3QgaTF5Se7ciMZ6ooU/c7aMz26feZyUFfeiAkR3EB18ByK3j0qnGHW0cToeb0/1FbFcGtjzPvNcjsUBOhV50QmsetuemayQGFe2jJquPSaUCKeuW7tBz9KGlYguu461z1ajG2bPdnOrmLt9OdTTEz+O3VhWIH5ynx1jSd81Wv212/ynH6v6N3EuKaRCQEcEWwZl9thOwQvFwpdaYokYt4IsN2efG0DQG6JA27A7hjJpsST3mxfE1fL9+CRDkwWK+g9TZj8ljX+kaTHRw68YS7+R6AosHBUrtm/VWsvRpGFUnxsntoKC8Zm2qsLRvUTBCcsuuXYNNAqXsXcyFBEIh3a0xtYnLcrgWtkglZFO8JuV+ZtZqSrL5q8su3gmyL+PVeypp9RouaZ8RGQHF8ZJAyJSGfV1rW44OMfRwPZANVOxhEfWK2CmJ+jGlE0plkeWeTjccQoRw/pJn4MCOdy90YHA8mZheeEGemPz8jxG4yY3hm1yXTYZhZ7ieY=
-  file: build/libs/travis.test-1.0-SNAPSHOT.jar
+  file: "$HOME/build/libs/travis.test-1.0-SNAPSHOT.jar"
   skip_cleanup: true
   on:
     repo: RareScrap/travis.test
