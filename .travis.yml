@@ -6,6 +6,7 @@ jdk:
  - oraclejdk8
 
 script:
+ - chmod +x ./gradlew build connectedCheck
  - ./gradlew build
 
 cache:
