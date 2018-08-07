@@ -27,7 +27,7 @@ cache:
 deploy:
   provider: releases
   api_key: 518c97382dee98db13b059a4bcc20a88c8ecf551
-  file: travis.test-1.0-SNAPSHOT.jar
+  file: build/lib/travis.test-1.0-SNAPSHOT.jar
   skip_cleanup: true
   on:
     tags: true
