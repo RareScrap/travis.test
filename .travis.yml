@@ -8,11 +8,9 @@ script:
 - "./gradlew test"
 - "./gradlew build"
 - "./gradlew jar"
-- cd /home/travis/.travis/job_stages/build/
+- cd build
 - ls
-- cd /home/travis/.travis/job_stages/build/build
-- ls
-- cd /home/travis/.travis/job_stages/build/build/lib
+- cd lib
 - ls
 cache:
   directories:
