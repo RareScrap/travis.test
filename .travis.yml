@@ -10,7 +10,9 @@ script:
 - "./gradlew jar"
 - cd /build/
 - ls
-- cd /build/lib
+- cd /build/build
+- ls
+- cd /build/build/lib
 - ls
 cache:
   directories:
