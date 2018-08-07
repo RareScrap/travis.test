@@ -14,8 +14,8 @@ script:
  - ./gradlew jar
 
 before_deploy:
-#  - git config --local user.name "rarescrap"
-#  - git config --local user.email "rarescrap@gmail.com"
+  - git config --local user.name "RareScrap"
+  - git config --local user.email "RareScrap@users.noreply.github.com"
   - git tag "v0.0.1" #"$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
 
 deploy:
@@ -24,7 +24,7 @@ deploy:
   file: build/lib/travis.test-1.0-SNAPSHOT.jar
   skip_cleanup: true
 #  on:
-#    tags: true
+#    tags: true   
 #    all_branches: true
 #    repo: RareScrap/travis.test
 
