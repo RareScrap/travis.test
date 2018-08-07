@@ -14,22 +14,19 @@ script:
  - ./gradlew jar
 
 before_deploy:
-  - git config --local user.name "$USER_NAME"
-  - git config --local user.email "$USER_EMAIL"
-  - export GIT_TAG=$TRAVIS_BRANCH-0.1.$TRAVIS_BUILD_NUMBER
-  - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
-  - git push -q https://$TAGPERM@github.com/RareScrap/travis.test --tags
-  - ls -R
+  - git config --local user.name "rarescrap"
+  - git config --local user.email "rarescrap@gmail.com"
+  - git tag "v0.0.1" #"$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
 
 deploy:
   provider: releases
   api_key: 518c97382dee98db13b059a4bcc20a88c8ecf551
   file: build/lib/travis.test-1.0-SNAPSHOT.jar
   skip_cleanup: true
-  on:
-    tags: true
-    all_branches: true
-    repo: RareScrap/travis.test
+#  on:
+#    tags: true
+#    all_branches: true
+#    repo: RareScrap/travis.test
 
 cache:
   directories:
