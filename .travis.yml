@@ -8,6 +8,7 @@ script:
 - "./gradlew test"
 - "./gradlew build"
 - "./gradlew jar"
+- ls
 cache:
   directories:
   - "$HOME/.gradle"
