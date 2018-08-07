@@ -26,6 +26,6 @@ deploy:
   file_glob: true
   on:
     repo: RareScrap/travis.test
-    branches:    # ← new!
+    branches:    # ← new! ghjgjghjghjghj
           only:      # ← new!
             - master # ← new!
