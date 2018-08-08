@@ -22,9 +22,10 @@ before_deploy:
   # Set up git user name and tag this commit
   - git config --local user.name "RareScrap"
   - git config --local user.email "RareScrap@users.noreply.github.com"
-  - git commit --amend -m "SavageWorldRP $(date +'%d'.'%m'.'%Y')"
-  - git push --force HEAD:master
-  - git tag "Releas1"
+  - export GIT_TAG=$TRAVIS_BRANCH-v0.1.$TRAVIS_BUILD_NUMBER
+  - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
+  - git push -q https://518c97382dee98db13b059a4bcc20a88c8ecf551@github.com/RareScrap/travis.test --tags
+
 deploy:
   provider: releases
   api_key:
