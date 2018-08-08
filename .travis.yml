@@ -22,7 +22,7 @@ before_deploy:
   # Set up git user name and tag this commit
   - git config --local user.name "RareScrap"
   - git config --local user.email "RareScrap@users.noreply.github.com"
-  - git tag "SavageWorldRP v0.1 $(date +'%d.%m.%Y %H:%M:%S')"
+  - git tag "SavageWorldRP v0.$TRAVIS_BUILD_NUMBER $(date+'%d.%m.%Y') $(date+%H:%M:%S')"
 deploy:
   provider: releases
   api_key:
