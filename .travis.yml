@@ -17,6 +17,11 @@ cache:
   directories:
   - "$HOME/.gradle"
   - ".gradle"
+before_deploy:
+  # Set up git user name and tag this commit
+  - git config --local user.name "RareScrap"
+  - git config --local user.email "RareScrap@users.noreply.github.com"
+  - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
 deploy:
   provider: releases
   api_key:
