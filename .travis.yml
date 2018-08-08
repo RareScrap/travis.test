@@ -24,6 +24,7 @@ before_deploy:
   - git config --local user.email "RareScrap@users.noreply.github.com"
   - export GIT_TAG=$TRAVIS_BRANCH-v0.1.$TRAVIS_BUILD_NUMBER
   - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
+  - git push -q https://0d7c36959dbb126b5a61d1a98a02248692988827@github.com/RareScrap/travis.test --tags
 
 deploy:
   provider: releases
