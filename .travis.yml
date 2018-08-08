@@ -23,7 +23,7 @@ before_deploy:
   - git config --local user.name "RareScrap"
   - git config --local user.email "RareScrap@users.noreply.github.com"
   - git commit --amend -m "SavageWorldRP $(date +'%d'.'%m'.'%Y')"
-  - git push --force
+  - git push --force master
   - git tag "Releas1"
 deploy:
   provider: releases
