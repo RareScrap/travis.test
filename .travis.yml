@@ -1,6 +1,8 @@
 language: java
 sudo: false
-install: gradle wrapper --gradle-version 4.2
+install:
+- gradle wrapper --gradle-version 4.2
+- gem install bundler
 jdk:
 - oraclejdk8
 script:
@@ -30,7 +32,7 @@ deploy:
   file: "/home/travis/build/RareScrap/travis.test/build/libs/*"
   skip_cleanup: true
   file_glob: true
-  name: "SavageWorldRP $TRAVIS_TAG"
+  name: "SavageWorldRP v0.0.$TRAVIS_BUILD_NUMBER"
   body: "Дата $(date +'%d'.'%m'.'%Y')"
   on:
     repo: RareScrap/travis.test
