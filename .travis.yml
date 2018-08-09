@@ -22,10 +22,7 @@ before_deploy:
   # Set up git user name and tag this commit
   - git config --local user.name "RareScrap"
   - git config --local user.email "RareScrap@users.noreply.github.com"
-  - export GIT_TAG=$TRAVIS_BRANCH-v0.1.$TRAVIS_BUILD_NUMBER
-  - git tag $GIT_TAG -a -m "Generated tag from TravisCI for build $TRAVIS_BUILD_NUMBER"
-  - git push -q https://0d7c36959dbb126b5a61d1a98a02248692988827@github.com/rarescrap/travis.test --tags
-
+  - git tag "SavageWorldRP_$(date +'%d'.'%m'.'%Y')"
 deploy:
   provider: releases
   api_key:
@@ -33,6 +30,8 @@ deploy:
   file: "/home/travis/build/RareScrap/travis.test/build/libs/*"
   skip_cleanup: true
   file_glob: true
+  name: "Попка"
+  body: "Жопка"
   on:
     repo: RareScrap/travis.test
     branches:    # ← new! ghjgjghjghjghj
