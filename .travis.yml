@@ -6,7 +6,12 @@ install:
 jdk:
 - oraclejdk8
 script:
-- chmod +x gradlew
+- git clone https://github.com/olivierlacan/keep-a-changelog.git # keep-a-changelog install
+- cd keep-a-changelog
+- bundle install
+- bundle exec middleman
+- bundle exec rake publish
+- chmod +x gradlew #build script
 - "./gradlew test"
 - "./gradlew build"
 - "./gradlew jar"
