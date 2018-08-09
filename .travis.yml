@@ -31,7 +31,7 @@ deploy:
   skip_cleanup: true
   file_glob: true
   name: "SavageWorldRP $TRAVIS_TAG"
-  body: "Дата $(date +'%d'.'%m'.'%Y')<br>$TRAVIS_COMMIT_MESSAGE"
+  body: "Дата $(date +'%d'.'%m'.'%Y')"
   on:
     repo: RareScrap/travis.test
     branches:    # ← new! ghjgjghjghjghj
